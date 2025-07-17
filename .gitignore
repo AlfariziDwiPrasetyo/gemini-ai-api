@@ -1,0 +1,12 @@
+# Dependency folder
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+npm-debug.log*
+*.log
+
+# Uploads (Multer)
+uploads/
