@@ -11,8 +11,8 @@ A simple Express.js application that integrates with **Google Gemini API** to ge
 - 🖼️ Analyze and describe uploaded images
 - 📄 Analyze content from uploaded documents (e.g., PDF, DOCX)
 - 🔊 Transcribe or analyze uploaded audio files
+- 💬 Simple chatbot frontend (HTML/JS) for interaction
 - 📦 Modular Express.js structure (routes/controllers/utils)
-
 
 ---
 
@@ -43,6 +43,26 @@ npm run start
 ---
 
 ## 📘 API Endpoints
+
+### `POST /api/chat`
+
+Generate chat based on a message.
+
+**Request:**
+```json
+{
+  "message": "Hello."
+}
+```
+
+**Response:**
+```json
+{
+  "output": "Hello there! How can i help you!"
+}
+```
+
+---
 
 ### `POST /generate-text`
 

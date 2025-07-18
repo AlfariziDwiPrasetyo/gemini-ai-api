@@ -4,11 +4,15 @@ import {
   generateFromImage,
   generateFromDocument,
   generateFromAudio,
+  generateChat,
 } from "../controllers/generateController.js";
 
 const router = express.Router();
 
 export default (upload, fs) => {
+  // Route buat chat
+  router.post("/api/chat", generateChat);
+
   // Route buat generate text
   router.post("/generate-text", generateText);
 

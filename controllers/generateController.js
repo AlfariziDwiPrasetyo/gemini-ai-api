@@ -1,6 +1,27 @@
 import model from "../geminiModel/index.js";
 import { fileToGenerativePartManual } from "../utils/index.js";
 
+// generate chat
+
+export async function generateChat(req, res) {
+  const userMessage = req.body.message;
+
+  if (!userMessage) {
+    return res.status(400).json({ reply: "Message is required" });
+  }
+
+  try {
+    const result = await model.generateContent(userMessage);
+    const response = await result.response;
+    const text = response.text();
+
+    res.json({ reply: text });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ reply: "Something went wrong." });
+  }
+}
+
 // generate text
 export async function generateText(req, res) {
   const { prompt } = req.body;
